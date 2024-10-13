@@ -1,0 +1,96 @@
+Berikut adalah latihan soal MySQL tanpa melibatkan `JOIN`, hanya fokus pada `SELECT`, `WHERE`, dan filtering lainnya, silahkan buat database dan buat table-tablenya:
+
+### Tabel 1: `students`
+```sql
+CREATE TABLE students (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    birth_date DATE,
+    enrollment_year INT
+);
+
+INSERT INTO students (name, birth_date, enrollment_year)
+VALUES 
+('Andi', '2001-05-20', 2019),
+('Budi', '2000-08-15', 2018),
+('Cici', '2002-11-10', 2020),
+('Dedi', '2001-03-30', 2019),
+('Eka', '2000-12-01', 2018);
+```
+
+### Tabel 2: `courses`
+```sql
+CREATE TABLE courses (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    course_name VARCHAR(100),
+    course_code VARCHAR(10),
+    credits INT
+);
+
+INSERT INTO courses (course_name, course_code, credits)
+VALUES 
+('Mathematics', 'MAT101', 3),
+('Physics', 'PHY101', 4),
+('Chemistry', 'CHE101', 3),
+('Biology', 'BIO101', 2),
+('Computer Science', 'CSE101', 5);
+```
+
+### Tabel 3: `enrollments`
+```sql
+CREATE TABLE enrollments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id INT,
+    course_id INT,
+    grade CHAR(2)
+);
+
+INSERT INTO enrollments (student_id, course_id, grade)
+VALUES
+(1, 1, 'A'),
+(1, 2, 'B'),
+(2, 1, 'C'),
+(2, 3, 'A'),
+(3, 4, 'B'),
+(4, 5, 'A'),
+(5, 2, 'C');
+```
+
+### Tabel 4: `teachers`
+```sql
+CREATE TABLE teachers (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    hire_date DATE
+);
+
+INSERT INTO teachers (name, hire_date)
+VALUES
+('Dr. John', '2010-02-15'),
+('Prof. Emily', '2008-08-23'),
+('Dr. James', '2015-05-12');
+```
+
+### Latihan Soal:
+
+1. **Select semua kolom dari tabel `students`.**
+
+2. **Select kolom `name` dan `enrollment_year` dari tabel `students`.**
+
+3. **Cari semua `students` yang lahir setelah tahun 2001.**
+
+4. **Cari semua `students` yang masuk sebelum tahun 2020.**
+
+5. **Select semua `courses` yang memiliki `credits` lebih dari 3.**
+
+6. **Cari semua `students` yang memiliki `grade` A di tabel `enrollments`.**
+
+7. **Cari semua `teachers` yang dipekerjakan sebelum tahun 2012.**
+
+8. **Cari `courses` yang memiliki `credits` kurang dari 4.**
+
+9. **Cari `students` yang mendapatkan nilai `B` di tabel `enrollments`.**
+
+10. **Select semua `courses` yang namanya mengandung kata "Science".**
+
+Latihan-latihan ini akan membantu kamu memahami dasar penggunaan `SELECT` dan filtering di MySQL tanpa menggunakan `JOIN`. Jika kamu ingin melanjutkan latihan atau ada pertanyaan, jangan ragu untuk bertanya!
